@@ -1,0 +1,307 @@
+/* =========================================================
+   Shopping — builds on the shared list styles in todo.css
+   ========================================================= */
+
+.summary-actions {
+  margin-left: auto;
+}
+
+/* Quick add */
+.category-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.category-emoji {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.category-select select {
+  height: 28px;
+  font-size: var(--fs-xs);
+}
+
+.auto-badge {
+  padding: 1px 6px;
+  border-radius: var(--r-xs);
+  background: var(--accent-soft);
+  font-size: var(--fs-2xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+
+.qty-preview {
+  font-size: var(--fs-xs);
+  color: var(--text-3);
+}
+
+.qty-preview strong {
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Suggestions */
+.suggestions {
+  margin: calc(-1 * var(--sp-3)) 0 var(--sp-6);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.suggestions-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 48px;
+  padding: 0 var(--sp-4);
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--dur);
+}
+
+.suggestions-toggle:hover {
+  background: var(--bg-subtle);
+}
+
+.suggestions-icon {
+  color: var(--accent-text);
+  flex-shrink: 0;
+}
+
+.suggestions-title {
+  font-size: var(--fs-base);
+  font-weight: 600;
+}
+
+.suggestions-sub {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--fs-xs);
+  color: var(--text-3);
+}
+
+.suggestions-chevron {
+  flex-shrink: 0;
+  color: var(--text-3);
+  transition: transform 0.2s var(--ease);
+}
+
+.suggestions.open .suggestions-chevron {
+  transform: rotate(90deg);
+}
+
+.suggestions-body {
+  padding: var(--sp-1) var(--sp-4) var(--sp-4);
+  border-top: 1px solid var(--border);
+  animation: fade-up 0.2s var(--ease);
+}
+
+.suggestions-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: var(--sp-3) 0;
+}
+
+.suggestion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 6px;
+}
+
+.suggestion {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  height: 36px;
+  padding: 0 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--bg);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color var(--dur), background var(--dur), color var(--dur);
+}
+
+.suggestion svg {
+  flex-shrink: 0;
+  color: var(--text-3);
+}
+
+.suggestion:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.suggestion:hover:not(:disabled) svg {
+  color: var(--accent-text);
+}
+
+.suggestion.added {
+  border-style: dashed;
+  background: transparent;
+  color: var(--text-3);
+  cursor: default;
+}
+
+.suggestion.added svg {
+  color: var(--accent-text);
+}
+
+.suggestion-emoji {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.suggestion-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.suggestion-qty {
+  flex-shrink: 0;
+  padding: 0 6px;
+  border-radius: var(--r-full);
+  background: var(--bg-hover);
+  font-size: var(--fs-2xs);
+  font-weight: 600;
+  line-height: 18px;
+  color: var(--text-2);
+  white-space: nowrap;
+}
+
+.suggestion.added .suggestion-qty {
+  background: transparent;
+  color: var(--text-3);
+}
+
+.suggestions-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  margin-top: var(--sp-3);
+  font-size: var(--fs-xs);
+}
+
+/* List rows */
+.todo-check.is-square {
+  border-radius: 6px;
+  --ring: var(--border-strong);
+  background: transparent;
+}
+
+.shop-title {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.shop-cat {
+  font-size: 14px;
+}
+
+.qty-badge {
+  padding: 0 7px;
+  border-radius: var(--r-full);
+  background: var(--bg-hover);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--text-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.todo-item.completed .qty-badge {
+  background: transparent;
+  color: var(--text-3);
+  font-weight: 500;
+}
+
+.shop-item .meta-note {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.shop-group-label {
+  gap: 6px;
+}
+
+.shop-group-emoji {
+  font-size: 14px;
+  letter-spacing: 0;
+}
+
+/* Item panel */
+.qty-stepper {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+}
+
+.qty-stepper .icon-btn {
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.qty-input {
+  width: 110px;
+  text-align: center;
+}
+
+.category-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.category-option {
+  height: 30px;
+}
+
+@media (max-width: 767px) {
+  .todo-summary .summary-actions {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .todo-summary .summary-actions .btn {
+    width: 100%;
+  }
+
+  .suggestions-sub {
+    display: none;
+  }
+
+  .suggestion-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .suggestion {
+    height: 40px;
+  }
+
+  .category-select select {
+    height: 32px;
+    font-size: 16px;
+  }
+}
